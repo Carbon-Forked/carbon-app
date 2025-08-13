@@ -1,29 +1,21 @@
 import { type Chain } from 'viem';
 import config from 'config';
-import { CHAIN_ID, RPC_HEADERS, RPC_URLS } from './wagmi.constants';
 import { http } from 'wagmi';
 
 // Native Currency Symbol
 // Remove content in parenthesis
 // Symbol must be 2-6 characters to add new network
 // @todo(#1417) refactor this implementation to use the gasToken symbol in a different way
-const nativeCurrencySymbol = config.network.gasToken.symbol
-  .replace(/\s*\(.*?\)\s*/g, '')
-  .substring(0, 6);
 
 export const currentChain: Chain = {
-  id: config.network.chainId,
-  name: config.network.name,
+  id: config.network.chainId, // 296
+  name: config.network.name, // Hedera Testnet
   nativeCurrency: {
-    name: config.network.gasToken.name,
-    symbol: nativeCurrencySymbol,
-    decimals: config.network.gasToken.decimals,
+    name: config.network.gasToken.name, // HBAR
+    symbol: config.network.gasToken.symbol, // HBAR
+    decimals: 18, // keep 18 for EVM layer; override to 8 in SDK (see step 3)
   },
-  rpcUrls: {
-    default: {
-      http: [config.network.rpc.url],
-    },
-  },
+  rpcUrls: { default: { http: [config.network.rpc.url] } }, // Hashio
   blockExplorers: {
     default: {
       name: config.network.blockExplorer.name,
@@ -31,18 +23,15 @@ export const currentChain: Chain = {
     },
   },
   contracts: { ...config.utils },
-};
+} as const;
 
 export const configChains: [Chain, ...Chain[]] = [currentChain];
 
 export const configTransports = {
-  [currentChain.id]: http(RPC_URLS[CHAIN_ID], {
-    fetchOptions: {
-      headers: RPC_HEADERS[CHAIN_ID],
-    },
+  [currentChain.id]: http(config.network.rpc.url, {
     batch: {
-      batchSize: config.network.rpc.batchSize,
-      wait: config.network.rpc.wait,
+      batchSize: config.network.rpc.batchSize ?? 50,
+      wait: config.network.rpc.wait ?? 20,
     },
   }),
 };
