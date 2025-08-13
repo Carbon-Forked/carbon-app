@@ -13,6 +13,11 @@ import { cn, shortenString } from 'utils/helpers';
 import { useGetEnsFromAddress } from 'libs/queries/chain/ens';
 import { WalletIcon } from 'components/common/WalletIcon';
 
+import { evmToHedera } from 'utils/hederaTokenUtils';
+import { CHAIN_ID } from 'libs/wagmi';
+
+const isHedera = CHAIN_ID === 296 || CHAIN_ID === 295;
+
 const iconProps = { className: 'w-20 hidden lg:block' };
 
 export const MainMenuRightWallet: FC = () => {
@@ -36,12 +41,17 @@ export const MainMenuRightWallet: FC = () => {
     return 'secondary';
   }, [isSupportedNetwork, isUserBlocked]);
 
+  const displayAddr = useMemo(
+    () => (user && isHedera ? evmToHedera(user) : user),
+    [user, isHedera],
+  );
+
   const buttonText = useMemo(() => {
     if (isUserBlocked) return 'Wallet Blocked';
     if (!isSupportedNetwork) return 'Wrong Network';
     if (!user) return 'Connect Wallet';
-    return shortenString(ensName || user);
-  }, [ensName, isSupportedNetwork, isUserBlocked, user]);
+    return shortenString(ensName || displayAddr || '');
+  }, [ensName, isSupportedNetwork, isUserBlocked, displayAddr]);
 
   const buttonIcon = useMemo(() => {
     if (isUserBlocked) return <IconWarning {...iconProps} />;
@@ -106,7 +116,8 @@ const ConnectedMenu: FC = () => {
   const { user, disconnect, isSupportedNetwork, switchNetwork } = useWagmi();
   const copyAddress = async () => {
     if (!user) return;
-    await navigator.clipboard.writeText(user);
+    const toCopy = isHedera ? evmToHedera(user) : user;
+    await navigator.clipboard.writeText(toCopy);
     setMenuOpen(false);
     toaster.addToast('Address copied in Clipboard 👍');
   };
