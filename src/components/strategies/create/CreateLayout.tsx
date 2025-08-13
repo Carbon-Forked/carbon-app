@@ -1,4 +1,4 @@
-import { CarbonLogoLoading } from 'components/common/CarbonLogoLoading';
+import { AureusLogoLoading } from 'components/common/AureusLogoLoading';
 import { TradeLayout } from 'components/trade/TradeLayout';
 import { FC, ReactNode } from 'react';
 import { InitMarketPrice } from '../common/InitMarketPrice';
@@ -20,7 +20,7 @@ export const CreateLayout: FC<Props> = ({ children, url }) => {
   if (!marketPrice && marketQuery.isPending) {
     return (
       <TradeLayout>
-        <CarbonLogoLoading className="h-[80px] place-self-center" />
+        <AureusLogoLoading className="h-[80px] place-self-center" />
       </TradeLayout>
     );
   }

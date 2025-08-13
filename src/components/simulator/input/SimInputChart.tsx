@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router';
 import { buttonStyles } from 'components/common/button/buttonStyles';
-import { CarbonLogoLoading } from 'components/common/CarbonLogoLoading';
+import { AureusLogoLoading } from 'components/common/AureusLogoLoading';
 import {
   SimulatorInputOverlappingValues,
   SimulatorOverlappingInputDispatch,
@@ -91,7 +91,7 @@ export const SimInputChart = ({
   if (isPending || marketIsPending) {
     return (
       <Layout>
-        <CarbonLogoLoading className="h-[80px] self-center justify-self-center" />
+        <AureusLogoLoading className="h-[80px] self-center justify-self-center" />
       </Layout>
     );
   }

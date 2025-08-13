@@ -1,4 +1,4 @@
-import { CarbonLogoLoading } from 'components/common/CarbonLogoLoading';
+import { AureusLogoLoading } from 'components/common/AureusLogoLoading';
 import {
   Highcharts,
   HighchartsReact,
@@ -26,7 +26,7 @@ export const PortfolioPieChart = ({
       <div className="absolute flex size-full items-center justify-center">
         {isPending ? (
           <div className="h-[80px]">
-            <CarbonLogoLoading />
+            <AureusLogoLoading />
           </div>
         ) : (
           centerElement
