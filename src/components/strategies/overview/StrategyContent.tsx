@@ -2,7 +2,7 @@ import { FC, memo, ReactElement, useEffect, useRef, useState } from 'react';
 import { StrategyWithFiat } from 'libs/queries';
 import { StrategyBlock } from 'components/strategies/overview/strategyBlock';
 import { StrategyBlockCreate } from 'components/strategies/overview/strategyBlock';
-import { CarbonLogoLoading } from 'components/common/CarbonLogoLoading';
+import { AureusLogoLoading } from 'components/common/AureusLogoLoading';
 import { cn } from 'utils/helpers';
 import { StrategyTable } from './StrategyTable';
 import { StrategyLayout } from '../StrategySelectLayout';
@@ -31,7 +31,7 @@ export const LocalStrategyContent: FC<Props> = ({
     return (
       <div key="loading" className="flex flex-grow items-center justify-center">
         <div className="h-80">
-          <CarbonLogoLoading />
+          <AureusLogoLoading />
         </div>
       </div>
     );
