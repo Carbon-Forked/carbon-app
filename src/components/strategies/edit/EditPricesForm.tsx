@@ -28,7 +28,7 @@ import { hasNoBudget } from '../overlapping/utils';
 import { StrategyUpdate } from '@bancor/carbon-sdk';
 import { useMarketPrice } from 'hooks/useMarketPrice';
 import { InitMarketPrice } from '../common/InitMarketPrice';
-import { CarbonLogoLoading } from 'components/common/CarbonLogoLoading';
+import { AureusLogoLoading } from 'components/common/AureusLogoLoading';
 import style from 'components/strategies/common/form.module.css';
 import config from 'config';
 
@@ -205,7 +205,7 @@ export const EditPricesForm: FC<Props> = (props) => {
   };
 
   if (!marketPrice && marketQuery.isPending) {
-    return <CarbonLogoLoading className="h-[80px] place-self-center" />;
+    return <AureusLogoLoading className="h-[80px] place-self-center" />;
   }
 
   if (!marketPrice) {

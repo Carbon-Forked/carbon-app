@@ -311,7 +311,7 @@ To change the logo in the app, you can replace the following files with your own
 
 - Logo file: [`carbon.svg`](src/assets/logos/carbon.svg).
 - Banner file: [`carbon.jpg`](public/carbon.jpg) - used when sharing links to the app.
-- Carbon Logo Loading: [`CarbonLogoLoading.tsx`](src/components/common/CarbonLogoLoading.tsx) - Used for loading animations in the app.
+- Logo Loading Component: [`AureusLogoLoading.tsx`](src/components/common/AureusLogoLoading.tsx) - Used for loading animations in the app.
 - Favicon file: [`favicon.ico`](public/favicon.ico).
 
 Please do not replace the [`carbondefi.svg`](src/assets/logos/carbondefi.svg) file as it is used for the "Powered by CarbonDeFi" logo in the footer.

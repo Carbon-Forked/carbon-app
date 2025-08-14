@@ -6,7 +6,7 @@ import {
 } from 'libs/queries/extApi/activity';
 import { ActivitySearchParams } from './utils';
 import { useActivityQuery, useActivityMetaQuery } from './useActivityQuery';
-import { CarbonLogoLoading } from 'components/common/CarbonLogoLoading';
+import { AureusLogoLoading } from 'components/common/AureusLogoLoading';
 import { useNavigate, useSearch } from '@tanstack/react-router';
 import { isEmpty } from 'utils/helpers/operators';
 import { addDays, getUnixTime } from 'date-fns';
@@ -90,7 +90,7 @@ export const ActivityProvider: FC<Props> = ({ children, params, url }) => {
   );
 
   if (activityMetaQuery.isPending) {
-    return <CarbonLogoLoading className="h-[80px] self-center" />;
+    return <AureusLogoLoading className="h-[80px] self-center" />;
   }
 
   const activities = activityQuery.data ?? [];

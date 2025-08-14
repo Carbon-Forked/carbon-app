@@ -22,6 +22,14 @@
     },
     {
       "chainId": 296,
+      "address": "0x0000000000000000000000000000000000068cda",
+      "name": "USDC",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "/tokens/hedera/0x0000000000000000000000000000000000068cda.svg"
+    },
+    {
+      "chainId": 296,
       "address": "0x000000000000000000000000000000000050623b",
       "name": "TAUGF",
       "symbol": "TAUGF",

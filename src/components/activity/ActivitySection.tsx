@@ -4,7 +4,7 @@ import { ActivityList } from './ActivityList';
 import { useBreakpoints } from 'hooks/useBreakpoints';
 import { useActivity } from './ActivityProvider';
 import { NotFound } from 'components/common/NotFound';
-import { CarbonLogoLoading } from 'components/common/CarbonLogoLoading';
+import { AureusLogoLoading } from 'components/common/AureusLogoLoading';
 import { useRouterState } from '@tanstack/react-router';
 
 interface SectionProps {
@@ -32,7 +32,7 @@ export const ActivitySection: FC<SectionProps> = ({ hideIds }) => {
   if (status === 'pending') {
     return (
       <div className="grid place-items-center md:min-h-[600px]">
-        <CarbonLogoLoading className="h-[80px]" />
+        <AureusLogoLoading className="h-[80px]" />
       </div>
     );
   }

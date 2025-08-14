@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Link, useRouterState } from 'libs/routing';
-import { ReactComponent as LogoCarbon } from 'assets/logos/carbon.svg';
+import { AureusLogo } from 'components/common/AureusLogo';
 import { menuItems } from 'components/core/menu';
 
 export const MainMenuLeft: FC = () => {
@@ -23,7 +23,7 @@ export const MainMenuLeft: FC = () => {
       data-testid="main-nav"
     >
       <Link to="/">
-        <LogoCarbon className="w-34" />
+        <AureusLogo className="w-34" />
       </Link>
 
       <div className="hidden space-x-24 md:block">

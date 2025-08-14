@@ -1,5 +1,5 @@
 import { flexRender, Row, Table } from '@tanstack/react-table';
-import { CarbonLogoLoading } from 'components/common/CarbonLogoLoading';
+import { AureusLogoLoading } from 'components/common/AureusLogoLoading';
 import { cn } from 'utils/helpers';
 
 interface Props<D> {
@@ -21,7 +21,7 @@ export const TBody = <D extends object>({
             colSpan={table.getVisibleFlatColumns().length}
             className="h-[320px] text-center"
           >
-            <CarbonLogoLoading className="h-[80px]" />
+            <AureusLogoLoading className="h-[80px]" />
           </td>
         </tr>
       ) : (

@@ -3,7 +3,7 @@ import { useWagmi } from 'libs/wagmi';
 import { useEffect, useState } from 'react';
 import { StrategiesPage } from 'pages/strategies/index';
 import { Strategy, useGetUserStrategies } from 'libs/queries';
-import { CarbonLogoLoading } from 'components/common/CarbonLogoLoading';
+import { AureusLogoLoading } from 'components/common/AureusLogoLoading';
 import { EditStrategyProvider } from 'components/strategies/edit/EditStrategyContext';
 import {
   getEditBudgetPage,
@@ -52,7 +52,7 @@ export const EditStrategyPageLayout = () => {
 
   if (!user) return <StrategiesPage />;
   if (isPending) {
-    return <CarbonLogoLoading className="h-100 place-self-center" />;
+    return <AureusLogoLoading className="h-100 place-self-center" />;
   }
   if (!strategy) return;
   return (

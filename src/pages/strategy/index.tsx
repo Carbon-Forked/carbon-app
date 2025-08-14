@@ -17,7 +17,7 @@ import {
   StrategyBlockManage,
 } from 'components/strategies/overview/strategyBlock/StrategyBlockManage';
 import { StrategySubtitle } from 'components/strategies/overview/strategyBlock/StrategyBlockHeader';
-import { CarbonLogoLoading } from 'components/common/CarbonLogoLoading';
+import { AureusLogoLoading } from 'components/common/AureusLogoLoading';
 import { NotFound } from 'components/common/NotFound';
 import { ActivityLayout } from 'components/activity/ActivityLayout';
 import { BackButton } from 'components/common/BackButton';
@@ -64,7 +64,7 @@ export const StrategyPage = () => {
   if (isPending) {
     return (
       <Page>
-        <CarbonLogoLoading className="m-80 h-[100px] self-center justify-self-center" />
+        <AureusLogoLoading className="m-80 h-[100px] self-center justify-self-center" />
       </Page>
     );
   }
