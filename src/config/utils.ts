@@ -264,6 +264,10 @@ export const pairsToExchangeMapping: { [key: string]: string } = {
   SEIWBTC: 'BINANCE:SEIBTC',
   SEIBNB: 'BINANCE:SEIBNB',
   SEITUSD: 'BINANCE:SEITUSD',
+  HBARUSDC: 'BINANCE:HBARUSDC',
+  HBARUSDT: 'BINANCE:HBARUSDT',
+  HBARBTC: 'BINANCE:HBARBTC',
+  HBARBNB: 'BINANCE:HBARBNB',
 };
 
 export const tokenParserMapKeys = [
