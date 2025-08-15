@@ -15,7 +15,7 @@ export const commonConfig: AppConfig = {
   mode: 'development',
   appName: 'Carbon DeFi',
   appUrl: 'http://localhost:3000',
-  carbonApi: '', // Disabled - app will work in blockchain-only mode
+  carbonApi: 'http://localhost:3001/v1/', // Disabled - app will work in blockchain-only mode
   selectedConnectors: ['MetaMask', 'WalletConnect', 'Coinbase Wallet'],
   blockedConnectors: ['Tailwind', 'Compass Wallet', 'Seif'],
   walletConnectProjectId: 'f9d8863ab6c03f2293d7d56d7c0c0853',
@@ -79,7 +79,7 @@ export const commonConfig: AppConfig = {
   },
   ui: {
     showSimulator: true,
-    priceChart: 'tradingView',
+    priceChart: 'native',
     useGradientBranding: false,
     tradeCount: true,
     currencyMenu: true,
