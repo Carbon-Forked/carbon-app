@@ -78,8 +78,8 @@ export const commonConfig: AppConfig = {
     faucetTokens: [],
   },
   ui: {
-    showSimulator: false,
-    priceChart: 'tradingView',
+    showSimulator: true,
+    priceChart: 'native',
     useGradientBranding: false,
     tradeCount: true,
     currencyMenu: true,
