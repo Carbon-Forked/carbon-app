@@ -14,8 +14,8 @@ const addresses = {
 export const commonConfig: AppConfig = {
   mode: 'development',
   appName: 'Carbon DeFi',
-  appUrl: 'http://localhost:3000',
-  carbonApi: 'http://localhost:3001/v1/', // Disabled - app will work in blockchain-only mode
+  appUrl: import.meta.env.VITE_APP_URL || 'http://localhost:3001',
+  carbonApi: import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000/v1/',
   selectedConnectors: ['MetaMask', 'WalletConnect', 'Coinbase Wallet'],
   blockedConnectors: ['Tailwind', 'Compass Wallet', 'Seif'],
   walletConnectProjectId: 'f9d8863ab6c03f2293d7d56d7c0c0853',
@@ -26,10 +26,11 @@ export const commonConfig: AppConfig = {
     chainId: 296,
     blockExplorer: {
       name: 'HashScan',
-      url: 'https://hashscan.io/testnet',
+      url: import.meta.env.VITE_EXPLORER_URL || 'https://hashscan.io/mainnet',
     },
     rpc: {
-      url: 'https://testnet.hashio.io/api',
+      url:
+        import.meta.env.VITE_CHAIN_RPC_URL || 'https://mainnet.hashio.io/api',
     },
     defaultLimitedApproval: true,
     gasToken: {
