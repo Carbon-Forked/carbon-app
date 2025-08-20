@@ -7,14 +7,15 @@ const addresses = {
   TAUGF: '0x000000000000000000000000000000000050623b',
   TRPAX: '0x00000000000000000000000000000000004fe9f1',
   ZERO: '0x0000000000000000000000000000000000000000',
+  USDC: '0x0000000000000000000000000000000000068cda',
   // Add other Hedera testnet token addresses here as they become available
 };
 
 export const commonConfig: AppConfig = {
   mode: 'development',
   appName: 'Carbon DeFi',
-  appUrl: 'http://localhost:3000',
-  carbonApi: '', // Disabled - app will work in blockchain-only mode
+  appUrl: import.meta.env.VITE_APP_URL || 'http://localhost:3001',
+  carbonApi: import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000/v1/',
   selectedConnectors: ['MetaMask', 'WalletConnect', 'Coinbase Wallet'],
   blockedConnectors: ['Tailwind', 'Compass Wallet', 'Seif'],
   walletConnectProjectId: 'f9d8863ab6c03f2293d7d56d7c0c0853',
@@ -25,10 +26,11 @@ export const commonConfig: AppConfig = {
     chainId: 296,
     blockExplorer: {
       name: 'HashScan',
-      url: 'https://hashscan.io/testnet',
+      url: import.meta.env.VITE_EXPLORER_URL || 'https://hashscan.io/mainnet',
     },
     rpc: {
-      url: 'https://testnet.hashio.io/api',
+      url:
+        import.meta.env.VITE_CHAIN_RPC_URL || 'https://mainnet.hashio.io/api',
     },
     defaultLimitedApproval: true,
     gasToken: {
@@ -42,7 +44,7 @@ export const commonConfig: AppConfig = {
   sdk: {
     cacheTTL: ONE_HOUR_IN_MS,
   },
-  defaultTokenPair: [addresses.HBAR, addresses.TAUGF], // Updated to use HBAR/TAUGF pair
+  defaultTokenPair: [addresses.HBAR, addresses.USDC], // Updated to use HBAR/TAUGF pair
   popularPairs: [
     [addresses.HBAR, addresses.TAUGF], // Updated to use HBAR/TAUGF pair
     [addresses.HBAR, addresses.TRPAX],
@@ -55,14 +57,14 @@ export const commonConfig: AppConfig = {
   addresses: {
     tokens: addresses,
     carbon: {
-      carbonController: '0xE6861D90aC7BDDF813a0bA19C0007067189e56f4',
-      voucher: '0x8b9C718fB03687600B7043899b04465dB632D01a',
-      batcher: '0x0A85B8b9Dddb980b0090b2595219d654d47de028',
+      carbonController: '0x6F482F9c45ea2e6076748dE289eE55B95654A1bA',
+      voucher: '0x5253B5CCd337bbAB33817ac26CaB25c96c06D7d3',
+      batcher: '0x43ecddf72345373Ea1Ee4D720A6E599b91d03224',
     },
   },
   utils: {
     multicall3: {
-      address: '0xcA11bde05977b3631167028862bE2a173976CA11',
+      address: '0xe81c05D1113Ad86208b88B92239b87509A813619',
       blockCreated: 1,
     },
   },
@@ -78,7 +80,7 @@ export const commonConfig: AppConfig = {
   },
   ui: {
     showSimulator: true,
-    priceChart: 'tradingView',
+    priceChart: 'native',
     useGradientBranding: false,
     tradeCount: true,
     currencyMenu: true,

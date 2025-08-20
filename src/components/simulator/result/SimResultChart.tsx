@@ -1,4 +1,4 @@
-import { CarbonLogoLoading } from 'components/common/CarbonLogoLoading';
+import { AureusLogoLoading } from 'components/common/AureusLogoLoading';
 import { SimResultChartAnimation } from 'components/simulator/result/SimResultChartAnimation';
 import { SimResultChartSummary } from 'components/simulator/result/SimResultChartSummary';
 import { SimResultChartHeader } from 'components/simulator/result/SimResultChartHeader';
@@ -121,6 +121,6 @@ export const SimResultChart = ({ state, simulationType }: Props) => {
 
 const Loading = () => (
   <div className="rounded-10 grid h-[400px] place-items-center bg-black py-10">
-    <CarbonLogoLoading className="h-[100px]" />
+    <AureusLogoLoading className="h-[100px]" />
   </div>
 );

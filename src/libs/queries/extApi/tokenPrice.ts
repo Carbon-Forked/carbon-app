@@ -95,10 +95,10 @@ export const useGetTokenPriceHistory = (params: TokenPriceHistorySearch) => {
         const now = startOfDay(new Date());
         return new Array(365).fill(null).map((_, i) => ({
           date: +toUnixUTC(subDays(now, 365 - i)),
-          open: NaN,
-          close: NaN,
-          high: NaN,
-          low: NaN,
+          open: 0,
+          close: 0,
+          high: 0,
+          low: 0,
         }));
       }
     },

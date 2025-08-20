@@ -3,7 +3,7 @@ import { useGetTokenPriceHistory } from 'libs/queries/extApi/tokenPrice';
 import { TradeSearch } from 'libs/routing';
 import { FC, useCallback } from 'react';
 import { useMarketPrice } from 'hooks/useMarketPrice';
-import { CarbonLogoLoading } from 'components/common/CarbonLogoLoading';
+import { AureusLogoLoading } from 'components/common/AureusLogoLoading';
 import { defaultEnd, oneYearAgo } from 'components/strategies/common/utils';
 import { NotFound } from 'components/common/NotFound';
 import { TradingviewChart } from 'components/tradingviewChart';
@@ -70,7 +70,7 @@ export const PairChartHistory: FC<Props> = (props) => {
   if (isPending || marketIsPending) {
     return (
       <section className="rounded-12 grid flex-1 items-center bg-black">
-        <CarbonLogoLoading className="h-[80px]" />
+        <AureusLogoLoading className="h-[80px]" />
       </section>
     );
   }

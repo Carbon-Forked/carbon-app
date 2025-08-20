@@ -1,4 +1,5 @@
 import { SafeDecimal } from 'libs/safedecimal';
+import { AccountId } from '@hashgraph/sdk';
 
 /**
  * Hedera-specific token utilities to handle decimal precision issues
@@ -21,6 +22,14 @@ export const expandHederaToken = (
   return new SafeDecimal(trimmed)
     .times(new SafeDecimal(10).pow(precision))
     .toFixed(0);
+};
+
+export const evmToHedera = (addr: string) => {
+  try {
+    return AccountId.fromEvmAddress(0, 0, addr.toLowerCase()).toString();
+  } catch {
+    return addr;
+  }
 };
 
 /**

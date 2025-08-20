@@ -6,7 +6,7 @@ import { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { BaseOrder } from 'components/strategies/common/types';
 import { useMarketPrice } from 'hooks/useMarketPrice';
 import { TradeTypes } from 'libs/routing/routes/trade';
-import { CarbonLogoLoading } from 'components/common/CarbonLogoLoading';
+import { AureusLogoLoading } from 'components/common/AureusLogoLoading';
 import {
   defaultEnd,
   getBounds,
@@ -122,7 +122,7 @@ export const StrategyChartHistory: FC<Props> = (props) => {
   if (isPending) {
     return (
       <section className="rounded-12 grid flex-1 items-center bg-black">
-        <CarbonLogoLoading className="h-[80px]" />
+        <AureusLogoLoading className="h-[80px]" />
       </section>
     );
   }
